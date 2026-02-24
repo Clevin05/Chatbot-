@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <title>Login Page</title>
+</head>
+<div class="forgot-modal" id="forgotModal">
+  <div class="forgot-box">
+    <h2>Reset Password</h2>
+    <p>Enter your registered email</p>
+    <input type="email" id="forgotEmail" placeholder="Email" />
+    <div class="forgot-actions">
+      <button id="sendReset">Send Reset Link</button>
+      <button class="cancel" id="closeForgot">Cancel</button>
+    </div>
+    <p class="success-msg" id="successMsg"></p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("BXSv4JUJNbAf4UE9G");
+  })();
+</script>
+
+
+<body>
+  <div class="container" id="container">
+    
+    <!-- SIGN UP -->
+    <div class="form-container sign-up">
+      <form>
+        <h1>Create Account</h1>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- SIGN IN -->
+    <div class="form-container sign-in">
+      <form>
+        <h1>Sign In</h1>
+        <span>or use your email password</span>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <a href="#" id="forgotPassword">Forgot password?</a>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+
+    <!-- TOGGLE -->
+    <div class="toggle-container">
+      <div class="toggle">
+        
+        <!-- LEFT PANEL -->
+        <div class="toggle-panel toggle-left">
+          <img src="logo.png.jpeg" alt="Logo" class="toggle-logo" />
+          <h1>Welcome Back!</h1>
+          <p>Enter your personal details to use all site features</p>
+          <button type="button" class="hidden" id="login">Sign In</button>
+        </div>
+
+        <!-- RIGHT PANEL (LOGO NEAR HELLO FRIEND) -->
+        <div class="toggle-panel toggle-right">
+          <img src="logo.png.jpeg" alt="Logo" class="toggle-logo" />
+          <h1>Hello, Friend!</h1>
+          <p>Register with your personal details to use all site features</p>
+          <button type="button" class="hidden" id="register">Sign Up</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
